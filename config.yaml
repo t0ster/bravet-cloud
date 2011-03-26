@@ -1,0 +1,11 @@
+cookbook_paths: [cookbooks]
+roles:
+    base:
+        description: Base role for all systems
+        recipes: [t0ster]
+    web:
+        description: Web node
+        parents: [base]
+        recipes: [t0ster.web]
+        default_attributes:
+            t0ster.web.web_port: 80
